@@ -1,0 +1,11 @@
+//========================================================\\
+||                  REFTABLE OPTIONS                      ||
+|]========================================================[|
+|| {FIRST}          || First Name                         ||
+|| {FIRSTI}         || First Initial                      ||
+|| {LAST}           || Last Name                          ||
+|| {LASTI}          || Last Initial                       ||
+|| {NUM}            || Random String of Numbers           ||
+|| {FIRST[NUM]}     || First NUM Letters of First Name    ||
+|| {LAST[NUM]}      || First NUM Letters of the Last Name ||
+\\========================================================//
