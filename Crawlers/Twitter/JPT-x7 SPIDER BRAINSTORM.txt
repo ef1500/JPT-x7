@@ -1,0 +1,12 @@
+Audio Similarity Check
+https://stackoverflow.com/questions/17511391/how-to-find-difference-of-two-voice-files-using-python
+https://stackoverflow.com/questions/27762661/how-to-compare-two-audio-files-to-check-if-they-have-a-similar-sound
+pyacoustid 1.2.0
+http://www.randombytes.org/audio_comparison.html
+https://oxygene.sk/2011/01/how-does-chromaprint-work/
+
+Data graph visualization
+https://towardsdatascience.com/python-interactive-network-visualization-using-networkx-plotly-and-dash-e44749161ed7
+https://plotly.com/
+
+USE tweepy

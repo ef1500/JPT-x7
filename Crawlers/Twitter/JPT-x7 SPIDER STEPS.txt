@@ -1,0 +1,40 @@
+Twitter Crawler
+
+Step 1) Gain Information about target
+	-Extract Hashtags
+	-Extract any Names from originating from target's posts
+		-Set this as a keyword
+	-Extract any Images
+	-Extract any audio
+	-Extract all text from tweets and organize them neatly
+	-Extract all geodata from tweets
+	-Extract dates and times from tweets
+
+Step 2) Profiling target's Connections (Who target Follows and/or who follows the target)
+	-Extract Hashtags
+	-Extract any Images
+	-Extract any audio
+	-Extract all text from tweets and organize it neatly
+	-Extract all geodata
+	-Extract dates and times from tweets
+
+Step 3) Test data from target against connections
+	-Find common hashtags
+		-Determine who has the most posts on this hashtag
+	-Find Similar Images
+	-Determine similarity of audio
+	-Find all common and recurring words
+	-See if any Names reoccur in connection's tweets
+	-Determine if there is similar geodata (if any)
+	-Check for recurring similar dates/times of tweets
+		-If retweet, discard the data
+	-Organize the results neatly
+
+Step 4) Recrawl With New data
+	-Crawl all Common Hashtags
+	-Determine Decentralized targets
+		-Add user with most posts to the hashtags as a decentralized target
+		-Add user with most similar audio as a decentralized target
+		-Add user with most keyword matches as decentralized target
+	-Update Graph in real-time so the user can watch as it does its thing.
+	-Go to step 1 and repeat entire process for each decentralized target
