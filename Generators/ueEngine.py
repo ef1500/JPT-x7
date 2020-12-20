@@ -1,40 +1,9 @@
 # -*- coding: utf-8 -*-
-from colorama import Fore, init
-init()
 import itertools
 import os
 import sys
 import csv
 import re
-
-def getBanner():
-    banner = f'''{Fore.GREEN}
-    
-                                             ██╗██████╗ ████████╗    ██╗  ██╗███████╗
-                                             ██║██╔══██╗╚══██╔══╝    ╚██╗██╔╝╚════██║
-                                             ██║██████╔╝   ██║        ╚███╔╝    ██╔╝ 
-                                        ██   ██║██╔═══╝    ██║        ██╔██╗   ██╔╝  
-                                        ╚█████╔╝██║        ██║       ██╔╝ ██╗  ██║   
-                                         ╚════╝ ╚═╝        ╚═╝       ╚═╝  ╚═╝  ╚═╝   
-
-                                                
-==============================================={Fore.CYAN}提供: Hyper.GenX7{Fore.RESET}===========================================
-============================================={Fore.MAGENTA}Provided By: Hyper.GenX7{Fore.RESET}======================================
-
-//========================================================================================================\\
-||                                           Japanese Language Toolbox                                    ||
-\\========================================================================================================//
-                                     //=======================================\\
-                                     ||                OPTIONS                ||
-                                     |]=======================================[|
-                                     || [b] Basic Username Generation         ||
-                                     || [g] Generate Usernames and Check them ||
-                                     || [a] Advanced Username Generation      ||
-                                     \\=======================================//
-                                                
-{Fore.RESET}
-    '''.replace('=', f'{Fore.BLUE}={Fore.RESET}')
-    return banner
 
 def basicgentool(maxlength, output):
     with open('BaseTable.csv', newline = '\n') as csvfile:
@@ -118,7 +87,6 @@ def advusergen(filename, ofilename):
         csvf.close
         
 def StartUp():
-    print(getBanner())
     begin = input()
     if begin == "b":
         maxlength = input("Enter the Maximum Username Length: ")
