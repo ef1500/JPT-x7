@@ -38,3 +38,16 @@ Step 4) Recrawl With New data
 		-Add user with most keyword matches as decentralized target
 	-Update Graph in real-time so the user can watch as it does its thing.
 	-Go to step 1 and repeat entire process for each decentralized target
+
+=====================================================================================================
+Subprocess for layers
+
+So in a "layer", we have nodes, which are basically, the users that are connected to the target in 
+some way. We need a way to identify each node, and additionally a way to build a profile of each node
+in the centralized network. 
+
+Proposal:
+Assign a token to each node, allowing for easy access and lookup of each node. 
+This token will be a sha-256 hash of the users' names (may change this)
+
+Each layer will consist of tokens for the current node, parent node, and root node. Similar to a blockchain system.
