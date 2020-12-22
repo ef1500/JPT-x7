@@ -1,17 +1,27 @@
 # -*- coding: utf-8 -*-
+from __future__ import division
+from pyfiglet import Figlet
+from asciimatics.renderers import FigletText, SpeechBubble, Rainbow
+from asciimatics.effects import Scroll, Mirage, Wipe, Cycle, RandomNoise, Matrix, \
+    BannerText, Stars, Print
+from asciimatics.scene import Scene
+from asciimatics.screen import Screen
+from asciimatics.exceptions import ResizeScreenError
 import itertools
 import os
 import sys
 import csv
 import re
+import asciimatics
+import sys
 
 def basicgentool(maxlength, output):
-    with open('BaseTable.csv', newline = '\n') as csvfile:
-        baseTable = csv.reader(csvfile, delimiter = ' ', quotechar = '|')
+    with open('BaseTable.csv', newline = '') as csvfile:
+        baseTable = csv.reader(csvfile, dailect='excel')
         JPtable = [row for row in baseTable]
         csvfile.close()
         
-    with open(output + '.csv', 'w', newline = '\n') as csvf:
+    with open(output + '.csv', 'w', newline = '') as csvf:
         fieldnames = ['OUTPUT']
         writer = DictWriter(csvf, fieldnames=fieldnames)
         writer.writeheader()
@@ -86,9 +96,20 @@ def advusergen(filename, ofilename):
                  writer.writerow({'GENERATED USERNAMES', rxps})
         csvf.close
         
-def StartUp():
+def StartUp(screen):
+    scenes = []
+    effects = [
+        Mirage(
+            screen,
+            Rainbow(screen, FigletText("JPT-x7")),
+            screen.height // 2 - 3,
+            Screen.COLOUR_GREEN,
+            start_frame=100,
+            stop_frame=200),]
+    scenes.append(Scene(effects, 250, clear=False))
     begin = input()
     if begin == "b":
+        Print(screen, Rainbow(screen, "Enter the Maximum Username Length"))
         maxlength = input("Enter the Maximum Username Length: ")
         output = input('\nEnter the Filename For the output: ')
         print('\nGenerating usernames...')
@@ -107,9 +128,16 @@ def StartUp():
         advusergen(nFile, pFile)
     else:
         print("Please Use the Correct Arguments!/n")
+    screen.play(scenes, stop_on_resize=True)
+
         
 if __name__ == '__main__':
-    StartUp()
+    while True:
+        try:
+            Screen.wrapper(StartUp)
+            sys.exit(0)
+        except ResizeScreenError:
+            pass
 
 
 

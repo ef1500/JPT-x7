@@ -23,11 +23,10 @@ auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
 
-csvFile = open(filename, 'a')
-csvWriter = csv.writer(csvFile)
-
 #obtain central target's tweets
-def getTweetText(target):
+def getTweetText(target, filename):
+    csvFile = open(filename, 'a')
+    csvWriter = csv.writer(csvFile)
     tweepy.Cursor(api.user_timeline, id=target)
     for tweet in tweepy.Cursor(api.user_timeline).pages():
         csvWriter.writerow([tweet.created_at, tweet.text.encode('utf-8'),tweet.user.screen_name.encode('utf-8'), tweet.user.location.encode('utf-8')])
@@ -65,4 +64,5 @@ def obtainMentions(filename, dec_targets):
                     dec_open = open(dec_targets, 'a')
                     csvwriter_three = csv.writer(dec_open)
                     csvwriter_three.writerow(["Name"], screen_name.encode('utf-8')) #TODO: write to column that corresponds with the source
+                    csvwriter_three.writerow(["Parent"], row['Username'].encode('utf-8'))
                     csvwriter_three.writerow(["Username"], mnregex.encode('utf-8'))
